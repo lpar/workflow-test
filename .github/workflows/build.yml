@@ -1,4 +1,4 @@
-name: Reusable build step
+name: ⚙️  Do actual build
 
 on:
   workflow_call:
