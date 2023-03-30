@@ -9,10 +9,13 @@ on:
 
 jobs:
   print-stuff:
+    name: Print some info
     environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - run: |
         echo environment: ${{ inputs.environment }}
         echo var from environment: ${{ vars.SOME_VALUE }}
         echo secret from repo: ${{ secrets.SOME_SECRET }}
+        cat somefile.txt
