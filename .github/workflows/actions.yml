@@ -1,4 +1,4 @@
-actions: Do the thing
+name: Do the thing
 
 on:
   workflow_dispatch:
