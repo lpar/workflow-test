@@ -17,6 +17,6 @@ jobs:
       name: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
-      run: |
+    - run: |
         echo var from environment: ${{ var.SOME_VALUE }}
         echo secret from repo: ${{ secrets.SOME_SECRET }}
