@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Where to deploy the built site
+        options:
+        - production
+        - staging
+
+jobs:
+  call-reusable-action:
+    uses: ./.github/build.yml
+    secrets: inherit
+    with:
+      environment: ${{ inputs.environment }}

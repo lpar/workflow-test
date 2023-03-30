@@ -1,0 +1,20 @@
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: choice
+        description: 'The environment to deploy to'
+        default: 'production'
+        options:
+        - production
+        - staging
+
+jobs:
+  print-stuff:
+    environment:
+      name: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      run: |
+        echo var from environment: ${{ var.SOME_VALUE }}
+        echo secret from repo: ${{ secrets.SOME_SECRET }}
