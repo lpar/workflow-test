@@ -1,0 +1,13 @@
+name: Build/deploy on push
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  call-reusable-action:
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+    with:
+      environment: main
