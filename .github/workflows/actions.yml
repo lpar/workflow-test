@@ -4,11 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        type: choice
-        description: Where to deploy the built site
-        options:
-        - production
-        - staging
+        type: environment
 
 jobs:
   call-reusable-action:
