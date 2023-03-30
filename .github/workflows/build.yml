@@ -3,13 +3,7 @@ name: Reusable build step
 on:
   workflow_call:
     inputs:
-      environment:
-        type: choice
-        description: 'The environment to deploy to'
-        default: 'production'
-        options:
-        - production
-        - staging
+      environment
 
 jobs:
   print-stuff:
