@@ -3,7 +3,9 @@ name: Reusable build step
 on:
   workflow_call:
     inputs:
-      environment
+      environment:
+        required: true
+        type: environment
 
 jobs:
   print-stuff:
