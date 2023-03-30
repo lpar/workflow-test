@@ -5,14 +5,14 @@ on:
     inputs:
       environment:
         required: true
-        type: environment
+        type: string
 
 jobs:
   print-stuff:
-    environment:
-      name: ${{ inputs.environment }}
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     steps:
     - run: |
+        echo environment: ${{ inputs.environment }}
         echo var from environment: ${{ var.SOME_VALUE }}
         echo secret from repo: ${{ secrets.SOME_SECRET }}
