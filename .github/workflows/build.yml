@@ -7,8 +7,8 @@ on:
         required: true
         type: string
       delete:
-        required: true
         type: boolean
+        default: true
 
 jobs:
   print-stuff:
