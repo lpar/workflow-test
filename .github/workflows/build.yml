@@ -6,6 +6,9 @@ on:
       environment:
         required: true
         type: string
+      delete:
+        required: true
+        type: boolean
 
 jobs:
   print-stuff:
@@ -15,7 +18,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: |
+        if [ '${{ inputs.delete }}' == 'true' ]; then
+          DELETE_OPTION='--delete'
+        fi
         echo environment: ${{ inputs.environment }}
         echo var from environment: ${{ vars.SOME_VALUE }}
         echo secret from repo: ${{ secrets.SOME_SECRET }}
+        echo delete option: $DELETE_OPTION
         cat somefile.txt
