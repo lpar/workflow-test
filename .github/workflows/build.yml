@@ -25,4 +25,5 @@ jobs:
         echo var from environment: ${{ vars.SOME_VALUE }}
         echo secret from repo: ${{ secrets.SOME_SECRET }}
         echo delete option: $DELETE_OPTION
+        ls -la somefile.txt
         cat somefile.txt
