@@ -26,4 +26,5 @@ jobs:
         echo secret from repo: ${{ secrets.SOME_SECRET }}
         echo delete option: $DELETE_OPTION
         ls -la somefile.txt
+        git log somefile.txt
         cat somefile.txt
