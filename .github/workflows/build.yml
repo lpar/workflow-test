@@ -25,6 +25,8 @@ jobs:
         echo var from environment: ${{ vars.SOME_VALUE }}
         echo secret from repo: ${{ secrets.SOME_SECRET }}
         echo delete option: $DELETE_OPTION
+        echo ls
         ls -la somefile.txt
-        git log somefile.txt
+        echo git
+        git log -1 --format="%ad" -- somefile.txt
         cat somefile.txt
