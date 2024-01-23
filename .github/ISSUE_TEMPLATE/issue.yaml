@@ -30,7 +30,7 @@ body:
       label: Customers impacted
       description: How many customers is this issue relevant to?
       options:
-        - none
+        - zero
         - one
         - a few
         - many
