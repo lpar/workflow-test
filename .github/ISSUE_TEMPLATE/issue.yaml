@@ -1,0 +1,40 @@
+name: New issue
+description: Enter a new issue
+body:
+  - type: markdown
+    attributes:
+      value: Welcome to the new issue form.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Issue type
+      description: What type of issue you're entering.
+      options:
+        - bug
+        - feature
+        - accessibility
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: done-definition
+    attributes:
+      label: Definition of done
+      description: What would count as completion of this issue?
+      placeholder: 'Success criteria, functionality'
+    validations:
+      required: true
+  - type: dropdown
+    id: customers
+    attributes:
+      label: Customers impacted
+      description: How many customers is this issue relevant to?
+      options:
+        - none
+        - one
+        - a few
+        - many
+        - all
+      default: 0
+    validations:
+      required: true
