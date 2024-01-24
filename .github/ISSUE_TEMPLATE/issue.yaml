@@ -4,37 +4,98 @@ body:
   - type: markdown
     attributes:
       value: Welcome to the new issue form.
-  - type: dropdown
-    id: type
+  - type: textarea
+    id: description
     attributes:
-      label: Issue type
-      description: What type of issue you're entering.
+      label: Description
+      description: Provide a summary of the issue
+      placeholder: Briefly describe the problem, suggested improvements, or requested functionality.
+    validations:
+      required: true
+# For bugs
+  - type: input
+    id: version
+    attributes:
+      label: runZero version
+      description: What version was this bug initially noticed in?
+      placeholder: v4.1.240102.7
+    validations:
+      required: false
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Describe how someone can reproduce the issue
+      placeholder: Prerequisites needed, test data, steps to carry out.
+      value: |-
+        - Step 1
+        - Step 2
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe what should happen
+      placeholder: What output or behavior did you expect?
+    validations:
+      required: false
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: Describe what actually happened
+      placeholder: What output or behavior did you get? Include any error messages exactly as they appeared.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Problem severity
+      description: How bad a problem is this?
       options:
-        - bug
-        - feature
-        - accessibility
+        - Cosmetic (data correct, feature still works)
+        - Minor (broken but workaround exists)
+        - Major (one or more product features unusable)
+        - Critical (entire product unusable)
       default: 0
+    validations:
+      required: true
+# For a11y
+  - type: dropdown
+    id: wcag-level
+    attributes:
+      label: WCAG conformance level
+      description: What's the lowest level of WCAG conformance this issue prevents us from achieving?
+      options:
+        - A
+        - AA
+        - AAA
+      default: 0
+    validations:
+      required: true
+# For all issue types
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of "done"
+      description: Specify criteria for closing this issue.
     validations:
       required: true
   - type: textarea
-    id: done-definition
+    id: followup
     attributes:
-      label: Definition of done
-      description: What would count as completion of this issue?
-      placeholder: 'Success criteria, functionality'
+      label: Followup steps
+      description: List steps to be taken once the work is complete and the issue is closed.
     validations:
-      required: true
-  - type: dropdown
-    id: customers
+      required: false
+  - type: textarea
+    id: notes
     attributes:
-      label: Customers impacted
-      description: How many customers is this issue relevant to?
-      options:
-        - zero
-        - one
-        - a few
-        - many
-        - all
-      default: 0
+      label: Notes
+      description: References to related issues, background information, commentary, information about customers impacted.
     validations:
-      required: true
+      required: false
+  - type: markdown
+    attributes:
+      value: Please remember to set the labels for the issue appropriately.
