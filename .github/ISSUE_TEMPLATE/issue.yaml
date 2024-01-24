@@ -1,14 +1,11 @@
 name: New issue
 description: Enter a new issue
 body:
-  - type: markdown
-    attributes:
-      value: Welcome to the new issue form.
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Provide a summary of the issue
+      description: Provide a summary of the issue, from both customer and technical perspectives.
       placeholder: Briefly describe the problem, suggested improvements, or requested functionality.
     validations:
       required: true
@@ -16,7 +13,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: runZero version
+      label: runZero version (bugs only)
       description: What version was this bug initially noticed in?
       placeholder: v4.1.240102.7
     validations:
@@ -24,34 +21,31 @@ body:
   - type: textarea
     id: reproduce
     attributes:
-      label: Steps to reproduce
-      description: Describe how someone can reproduce the issue
-      placeholder: Prerequisites needed, test data, steps to carry out.
-      value: |-
-        - Step 1
-        - Step 2
+      label: Steps to reproduce (bugs only)
+      description: Describe how someone can reproduce the issue.
+      placeholder: Mention prerequisites needed, browsers used, steps to carry out.
     validations:
       required: false
   - type: textarea
     id: expected
     attributes:
-      label: Expected behavior
-      description: Describe what should happen
+      label: Expected behavior (bugs only)
+      description: Describe what should happen.
       placeholder: What output or behavior did you expect?
     validations:
-      required: false
+      required: true
   - type: textarea
     id: observed
     attributes:
-      label: Observed behavior
-      description: Describe what actually happened
+      label: Observed behavior (bugs only)
+      description: Describe what actually happened.
       placeholder: What output or behavior did you get? Include any error messages exactly as they appeared.
     validations:
       required: true
   - type: dropdown
     id: severity
     attributes:
-      label: Problem severity
+      label: Problem severity (bugs only)
       description: How bad a problem is this?
       options:
         - Cosmetic (data correct, feature still works)
@@ -65,7 +59,7 @@ body:
   - type: dropdown
     id: wcag-level
     attributes:
-      label: WCAG conformance level
+      label: WCAG conformance level (a11y only)
       description: What's the lowest level of WCAG conformance this issue prevents us from achieving?
       options:
         - A
@@ -79,21 +73,29 @@ body:
     id: done
     attributes:
       label: Definition of "done"
-      description: Specify criteria for closing this issue.
+      description: Specify criteria for closing this issue. For accessibility issues, specify a test procedure.
     validations:
       required: true
   - type: textarea
     id: followup
     attributes:
       label: Followup steps
-      description: List steps to be taken once the work is complete and the issue is closed.
+      description: List any steps to be taken once the work is complete and the issue is closed.
+      placeholder: Specify support tickets as SUPPORT-NNNN
     validations:
       required: false
   - type: textarea
     id: notes
     attributes:
       label: Notes
-      description: References to related issues, background information, commentary, information about customers impacted.
+      description: Optionally add references to related issues, background information, commentary, and information about customers impacted.
+    validations:
+      required: false
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Suggested implementation
+      description: Optionally add implementation suggestions.
     validations:
       required: false
   - type: markdown
