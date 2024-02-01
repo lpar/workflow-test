@@ -1,5 +1,4 @@
 name: New issue
-about: Demo new template
 description: Enter a new issue
 body:
   - type: textarea
